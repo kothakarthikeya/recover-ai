@@ -1,0 +1,38 @@
+# Python / Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+frontend/.env
+frontend/.env.local
+
+# Database
+*.db
+*.sqlite3
+recover_ai.db
+
+# Frontend Dependencies & Build Output
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.tsbuildinfo
+
+# Model Artifacts & Data Exports
+scripts/synthetic_dataset.json
+
+# IDE & OS Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
