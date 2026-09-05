@@ -29,7 +29,6 @@ frontend/dist-ssr/
 frontend/*.tsbuildinfo
 
 # Model Artifacts & Data Exports
-scripts/synthetic_dataset.json
 
 # IDE & OS Files
 .DS_Store

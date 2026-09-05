@@ -31,6 +31,10 @@ RUN pip install --no-cache-dir -r backend/requirements.txt
 # Copy backend application, scripts, and ML artifacts
 COPY backend/ ./backend/
 COPY scripts/ ./scripts/
+COPY scripts/synthetic_dataset.json ./scripts/synthetic_dataset.json
+
+# Build verification step to guarantee synthetic dataset exists in runner stage
+RUN test -f /app/scripts/synthetic_dataset.json && echo "Verified /app/scripts/synthetic_dataset.json exists in image"
 
 # Copy built production frontend assets from stage 1
 COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
