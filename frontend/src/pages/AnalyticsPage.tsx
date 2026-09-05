@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BarChart3, TrendingUp, ShieldCheck, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { BarChart3 } from 'lucide-react';
 import { analyticsApi } from '../api/analyticsApi';
 import type { StrategyPerformanceItem, ScenarioPerformanceItem, AuditSummary } from '../types';
 import { formatCurrency, formatEventType, formatStrategy } from '../utils/formatters';

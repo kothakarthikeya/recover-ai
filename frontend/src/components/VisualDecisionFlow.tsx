@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Brain, ShieldCheck, Play, CheckCircle2, AlertTriangle, XCircle, Clock } from 'lucide-react';
+import { Search, Brain, ShieldCheck, Play } from 'lucide-react';
 import type { OpportunityDetail } from '../types';
 import { formatDate, formatStrategy } from '../utils/formatters';
 import { StatusBadge } from './StatusBadge';

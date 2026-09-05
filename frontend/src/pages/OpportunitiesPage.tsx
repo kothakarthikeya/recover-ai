@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Target, Search, ArrowUpDown, ShieldCheck, Play, Eye } from 'lucide-react';
+import { Target, Search, Play, Eye } from 'lucide-react';
 import { analyticsApi } from '../api/analyticsApi';
 import { recoveryApi } from '../api/recoveryApi';
 import type { OpportunityDetail, RecoveryExecuteResponse } from '../types';

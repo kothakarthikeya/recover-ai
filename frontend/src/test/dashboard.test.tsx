@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import React from 'react';
 import { formatCurrency, formatPercent, formatStrategy } from '../utils/formatters';
 import { StatusBadge } from '../components/StatusBadge';
 import { PipelineFunnel } from '../components/PipelineFunnel';

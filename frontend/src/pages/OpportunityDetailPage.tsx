@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowLeft, Brain, ShieldCheck, Play, CheckCircle2, AlertTriangle, AlertCircle, RefreshCw, XCircle } from 'lucide-react';
+import { ArrowLeft, Brain, ShieldCheck, Play, AlertTriangle, AlertCircle } from 'lucide-react';
 import { analyticsApi } from '../api/analyticsApi';
 import { recoveryApi } from '../api/recoveryApi';
 import type { OpportunityDetail, RecoveryExecuteResponse } from '../types';
 import { StatusBadge } from '../components/StatusBadge';
 import { VisualDecisionFlow } from '../components/VisualDecisionFlow';
-import { formatCurrency, formatStrategy, formatDate } from '../utils/formatters';
+import { formatCurrency, formatStrategy } from '../utils/formatters';
 import { ConfirmationModal } from '../components/ConfirmationModal';
 import { ResultModal } from '../components/ResultModal';
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { History, ShieldCheck, Search, Filter } from 'lucide-react';
+import { History, Filter } from 'lucide-react';
 import { analyticsApi } from '../api/analyticsApi';
 import type { AuditSummaryItem } from '../types';
 import { formatCurrency, formatDate } from '../utils/formatters';

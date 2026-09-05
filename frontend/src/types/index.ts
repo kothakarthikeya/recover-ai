@@ -147,3 +147,19 @@ export interface BatchRecoveryResponse {
   recovery_rate_percent: number;
   results: RecoveryExecuteResponse[];
 }
+
+export interface PipelineAnalyticsResponse {
+  pipeline: PipelineStageItem[];
+}
+
+export interface StrategyAnalyticsResponse {
+  strategies: StrategyPerformanceItem[];
+}
+
+export interface ScenarioAnalyticsResponse {
+  scenarios: ScenarioPerformanceItem[];
+}
+
+export interface TimeSeriesAnalyticsResponse {
+  timeseries: TimeSeriesDataPoint[];
+}
