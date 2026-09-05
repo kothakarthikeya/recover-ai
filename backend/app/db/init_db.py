@@ -13,13 +13,16 @@ def ensure_demo_data_seeded(db: Session):
     Ensures deployed demo environment has active opportunities and metrics ready out-of-the-box.
     """
     try:
+        print("Demo data check started")
         event_count = db.query(RevenueEvent).count()
         if event_count > 0:
+            print(f"Existing demo data found: {event_count} events")
             return
 
         possible_paths = [
             os.path.abspath("scripts/synthetic_dataset.json"),
-            os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scripts", "synthetic_dataset.json"),
+            os.path.abspath("../scripts/synthetic_dataset.json"),
+            os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), "scripts", "synthetic_dataset.json"),
             "/app/scripts/synthetic_dataset.json",
         ]
 
@@ -30,7 +33,7 @@ def ensure_demo_data_seeded(db: Session):
                 break
 
         if not json_path:
-            print("Auto-seed notice: scripts/synthetic_dataset.json not found.")
+            print("Demo data check error: scripts/synthetic_dataset.json not found.")
             return
 
         print(f"Auto-seeding synthetic demo data from {json_path}...")
@@ -95,6 +98,7 @@ def ensure_demo_data_seeded(db: Session):
                 db.bulk_save_objects(new_events[i:i + chunk_size])
                 db.commit()
 
-        print(f"Auto-seeded {len(new_events)} synthetic events successfully.")
+        print(f"Seeded {len(new_events)} synthetic revenue events")
     except Exception as err:
-        print(f"Warning: Auto-seed skipped due to: {err}")
+        db.rollback()
+        print(f"Demo data check error: {err}")
